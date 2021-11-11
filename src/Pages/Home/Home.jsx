@@ -1,5 +1,8 @@
+import * as React from "react";
+import Matches from "@/Components/Matches";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <Matches />;
 };
 
 export default Home;

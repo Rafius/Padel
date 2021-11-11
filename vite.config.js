@@ -1,7 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+import macrosPlugin from "vite-plugin-babel-macros";
 
-// https://vitejs.dev/config/
+import path from 'path';
+
 export default defineConfig({
-  plugins: [react()]
-})
+  server: {
+    open: 'http://localhost:3000/'
+  },
+  plugins: [
+    reactRefresh(),
+    macrosPlugin(),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+    },
+  },
+});
