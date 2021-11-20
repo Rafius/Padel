@@ -2,12 +2,20 @@ import React from "react";
 import Header from "@/Components/Header/Header";
 import Events from "@/Components/Events";
 import { Main } from "./HomeStyled";
-import { schedule } from "./schedule.json";
 import useHomeHooks from "./HomeHooks";
 
 const Home = () => {
-  const { week, increaseWeek, decreaseWeek } = useHomeHooks();
+  const {
+    week,
+    increaseWeek,
+    decreaseWeek,
+    setLowLeague,
+    setMidLeague,
+    league,
+    schedule,
+  } = useHomeHooks();
 
+  console.log(schedule);
   return (
     <Main>
       <Header
@@ -15,6 +23,9 @@ const Home = () => {
         week={week}
         increaseWeek={increaseWeek}
         decreaseWeek={decreaseWeek}
+        setLowLeague={setLowLeague}
+        setMidLeague={setMidLeague}
+        league={league}
       />
       <Events schedule={schedule} week={week} />
     </Main>
