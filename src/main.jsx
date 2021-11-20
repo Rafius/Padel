@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import Home from "./pages/Home/Home";
 
 import configureStore from "./redux/store";
 
