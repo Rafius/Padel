@@ -1,32 +1,31 @@
 import { createSelector } from "reselect";
-import { ApplicationState } from "../reducer";
 
-export const matchesSelector = (state: ApplicationState) =>
+export const matchesSelector = (state) =>
   state && state.matches;
 
 export const dataMatcheSelector = createSelector(
   [matchesSelector],
-  (matches: any) => matches.data
+  (matches) => matches.data
 );
 
 export const weekmatchesSelector = createSelector(
   [matchesSelector],
-  (matches: any) => matches.week
+  (matches) => matches.week
 );
 
 export const leagueMatchesSelector = createSelector(
   [matchesSelector],
-  (matches: any) => matches.league
+  (matches) => matches.league
 );
 
 export const currentMatchesSelector = createSelector(
   [dataMatcheSelector, leagueMatchesSelector],
-  (data: any, league: any) => data.filter((item) => item.league === league)
+  (data, league) => data.filter((item) => item.league === league)
 );
 
 export const currentMatchesPerWeekSelector = createSelector(
   [currentMatchesSelector, weekmatchesSelector],
-  (currentMatches: any, week: any) => currentMatches[week]
+  (currentMatches, week) => currentMatches[week]
 );
 
 export const currentTitleSelector = createSelector(

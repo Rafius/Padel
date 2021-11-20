@@ -6,7 +6,7 @@ import {
   SET_LEAGUE,
 } from "./matches-actions";
 
-const initialState: any = {
+const initialState = {
   data: [
     {
       key: 1,
@@ -98,7 +98,7 @@ const initialState: any = {
   league: "low",
 };
 
-const getMatchesHandler = (state: any) => {
+const getMatchesHandler = (state) => {
   return {
     ...state,
     isLoading: true,
@@ -106,8 +106,8 @@ const getMatchesHandler = (state: any) => {
 };
 
 const getMatchesSuccessHandler = (
-  state: any,
-  action: { payload: { results: any } }
+  state,
+  action
 ) => {
   return {
     ...state,
@@ -116,7 +116,7 @@ const getMatchesSuccessHandler = (
   };
 };
 
-const setLeagueHandler = (state: any, action) => {
+const setLeagueHandler = (state, action) => {
   return {
     ...state,
     league: action.payload,
@@ -124,7 +124,7 @@ const setLeagueHandler = (state: any, action) => {
   };
 };
 
-const setWeekHandler = (state: any, action) => {
+const setWeekHandler = (state, action) => {
   return {
     ...state,
     week: action.payload,
