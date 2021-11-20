@@ -15,7 +15,6 @@ const Home = () => {
     schedule,
   } = useHomeHooks();
 
-  console.log(schedule);
   return (
     <Main>
       <Header
