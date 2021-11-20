@@ -1,17 +1,22 @@
 import React from "react";
 
-import Button from "@/Components/Button";
+import Button from "@/components/Button";
 import { LeaguesContainer } from "./LeaguesStyled";
 
-const Leagues = ({ setLowLeague, setMidLeague, league }) => (
-  <LeaguesContainer>
-    <Button onClick={setLowLeague} disabled={league === "low"}>
-      Nivel Bajo
-    </Button>
-    <Button onClick={setMidLeague} disabled={league === "mid"}>
-      Nivel Medio
-    </Button>
-  </LeaguesContainer>
-);
+const LOW = "low";
+const MID = "mid";
+
+const Leagues = ({ handleSetLeague, league }) => {
+  return (
+    <LeaguesContainer>
+      <Button onClick={() => handleSetLeague(LOW)} disabled={league === LOW}>
+        Nivel Bajo
+      </Button>
+      <Button onClick={() => handleSetLeague(MID)} disabled={league === MID}>
+        Nivel Medio
+      </Button>
+    </LeaguesContainer>
+  );
+};
 
 export default Leagues;
