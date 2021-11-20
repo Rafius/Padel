@@ -14,4 +14,5 @@ export const Info = styled.div`
 
 export const Title = styled.h4`
   text-align: center;
+  margin: 20px;
 `;
