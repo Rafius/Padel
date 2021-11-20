@@ -6,6 +6,6 @@ export const Main = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 600px;
-  padding: 30px;
+  padding: 10px;
   margin: auto;
 `;
