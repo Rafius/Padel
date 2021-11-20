@@ -7,7 +7,6 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "antd": "4.16.13",
     "immer": "9.0.6",
     "react": "17.0.0",
     "react-dom": "17.0.0",
