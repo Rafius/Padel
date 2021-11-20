@@ -9,7 +9,3 @@ export const Main = styled.div`
   padding: 30px;
   margin: auto;
 `;
-
-export const Title = styled.h2`
-  text-align: center;
-`;
