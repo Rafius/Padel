@@ -11,8 +11,8 @@ import {
   AwayResult,
 } from "./EventStyled";
 
-const Event = ({ home, away, homeResult, awayResult, isSecondary }) => (
-  <EventMain isSecondary={isSecondary}>
+const Event = ({ home, away, homeResult, awayResult, isSecondary, index }) => (
+  <EventMain index={index} isSecondary={isSecondary}>
     <Status result={homeResult}>{homeResult ? "Jugado" : "Pendiente"}</Status>
     <TeamNames>
       <HomeTeam won={homeResult > awayResult}>{home}</HomeTeam>

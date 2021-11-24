@@ -6,7 +6,8 @@ export const EventMain = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid white;
+  background-color: ${({ index }) => index % 2 === 0 && "rgb(245, 245, 245)"};
 `;
 
 export const Status = styled.div`

@@ -6,7 +6,9 @@ import Event from "./Event";
 const Events = () => {
   const { events } = useEventsHooks();
 
-  return events.map((event, index) => <Event key={index} {...event} />);
+  return events.map((event, index) => (
+    <Event key={index} {...event} index={index} />
+  ));
 };
 
 export default Events;
