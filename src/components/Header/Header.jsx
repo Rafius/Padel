@@ -4,18 +4,18 @@ import Button from "@/components/Button";
 import Leagues from "@/components/Leagues";
 
 import { HeaderContainer, Title, Info } from "./HeaderStyled";
-import useMatchesHooks from "@/hooks/useMatchesHooks";
+import useHeaderHooks from "./useHeaderHooks";
 
 const Header = () => {
   const {
     week,
     title,
     league,
+    matchesLength,
     decreaseWeek,
     increaseWeek,
-    matchesLength,
     handleSetLeague,
-  } = useMatchesHooks();
+  } = useHeaderHooks();
 
   return (
     <HeaderContainer>

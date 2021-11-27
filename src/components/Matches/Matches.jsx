@@ -1,6 +1,6 @@
 import React from "react";
 
-import useMatchesHooks from "@/hooks/useMatchesHooks";
+import useMatchesHooks from "./useMatchesHooks";
 import Match from "./Match";
 import { MatchesContainer } from "./MatchesStyled";
 

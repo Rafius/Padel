@@ -1,4 +1,4 @@
-import { SET_WEEk } from ".";
+import { SET_WEEK } from ".";
 import { reducerFactory } from "../reducer-factory";
 import {
   GET_MATCHES,
@@ -38,13 +38,14 @@ const setLeagueHandler = (state, action) => ({
 const setWeekHandler = (state, action) => ({
   ...state,
   week: action.payload,
+  isLoading: true,
 });
 
 const handlers = {
   [GET_MATCHES]: getMatchesHandler,
   [GET_MATCHES_SUCCESS]: getMatchesSuccessHandler,
   [SET_LEAGUE]: setLeagueHandler,
-  [SET_WEEk]: setWeekHandler,
+  [SET_WEEK]: setWeekHandler,
 };
 
 export default reducerFactory(initialState, handlers);
