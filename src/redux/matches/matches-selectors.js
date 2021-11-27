@@ -18,6 +18,11 @@ export const leagueMatchesSelector = createSelector(
   (matches) => matches.league
 );
 
+export const isLoadingSelector = createSelector(
+  [matchesSelector],
+  (matches) => matches.isLoading
+);
+
 export const currentMatchesSelector = createSelector(
   [dataMatcheSelector, leagueMatchesSelector],
   (data, league) => data.filter((item) => item.league === league) || {}
@@ -37,3 +42,4 @@ export const matchesLengthPerLeagueSelector = createSelector(
   [currentMatchesSelector],
   (currentMatches) => currentMatches.length
 );
+

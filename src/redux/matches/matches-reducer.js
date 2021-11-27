@@ -10,40 +10,33 @@ const initialState = {
   data: [],
   week: 0,
   league: "low",
+  isLoading: false
 };
 
-const getMatchesHandler = (state) => {
-  return {
-    ...state,
-    isLoading: true,
-  };
-};
+const getMatchesHandler = (state) => ({
+  ...state,
+  isLoading: true,
+});
 
 const getMatchesSuccessHandler = (
   state,
   action
-) => {
-  return {
-    ...state,
-    data: action.payload.matches,
-    isLoading: false,
-  };
-};
+) => ({
+  ...state,
+  data: action.payload.matches,
+  isLoading: false,
+});
 
-const setLeagueHandler = (state, action) => {
-  return {
-    ...state,
-    league: action.payload,
-    week: 0,
-  };
-};
+const setLeagueHandler = (state, action) => ({
+  ...state,
+  league: action.payload,
+  week: 0,
+});
 
-const setWeekHandler = (state, action) => {
-  return {
-    ...state,
-    week: action.payload,
-  };
-};
+const setWeekHandler = (state, action) => ({
+  ...state,
+  week: action.payload,
+});
 
 const handlers = {
   [GET_MATCHES]: getMatchesHandler,

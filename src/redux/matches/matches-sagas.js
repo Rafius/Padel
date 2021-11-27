@@ -10,8 +10,8 @@ function* getMatches() {
     const response = yield call(fetchApi, {
       url: urlProd
     });
+
     yield put(getMatchesSuccess(response));
-    console.log(response);
   } catch (e) {
     console.log(e);
   }
