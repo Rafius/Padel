@@ -20,12 +20,12 @@ export const leagueMatchesSelector = createSelector(
 
 export const currentMatchesSelector = createSelector(
   [dataMatcheSelector, leagueMatchesSelector],
-  (data, league) => data.filter((item) => item.league === league)
+  (data, league) => data.filter((item) => item.league === league) || {}
 );
 
 export const currentMatchesPerWeekSelector = createSelector(
   [currentMatchesSelector, weekmatchesSelector],
-  (currentMatches, week) => currentMatches[week]
+  (currentMatches, week) => currentMatches[week] || { events: [] }
 );
 
 export const currentTitleSelector = createSelector(
