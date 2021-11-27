@@ -7,7 +7,9 @@ export const EventMain = styled.div`
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid white;
-  background-color: ${({ index }) => index % 2 === 0 && "rgb(245, 245, 245)"};
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: ${({ index }) => index % 2 === 0 && "rgb(225, 225, 225)"};
 `;
 
 export const Status = styled.div`
@@ -23,16 +25,18 @@ export const TeamNames = styled.div`
 
 export const HomeTeam = styled.div`
   font-weight: ${({ won }) => won && 600};
+  margin-bottom: 10px;
 `;
 
 export const AwayTeam = styled.div``;
 
 export const Result = styled.div`
   font-weight: 600;
-  color: green;
   min-width: 50px;
 `;
 
-export const HomeResult = styled.div``;
+export const HomeResult = styled.div`
+  margin-bottom: 10px;
+`;
 
 export const AwayResult = styled.div``;

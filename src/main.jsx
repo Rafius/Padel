@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import Home from "@/pages/Home";
 import configureStore from "./redux/store";
+import "typeface-roboto";
 
 const store = configureStore();
 

@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
-export const Main = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 600px;
-  padding: 30px;
-  margin: auto;
+export const EventContainer = styled.div`
+  border: 1px grey;
+  border-radius: 4px;
+  padding: 5px;
 `;
