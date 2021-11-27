@@ -1,14 +1,19 @@
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest, select } from "redux-saga/effects";
 import fetchApi from "@/utils/fetch-api";
-import { GET_MATCHES, getMatchesSuccess, SET_WEEK } from "./matches-actions";
+import { GET_MATCHES, SET_WEEK, SET_LEAGUE, getMatchesSuccess } from "./matches-actions";
+import { weekmatchesSelector } from "./matches-selectors";
+import { leagueMatchesSelector } from ".";
 
-const urlLocal = "http://localhost:3001/matches?range=Nivel+Bajo!B18:G24";
-const urlProd = "https://padel-api.vercel.app/matches?range=Nivel+Bajo!B18:G24";
+const urlLocal = "http://localhost:3001/matches";
+const urlProd = "https://padel-api.vercel.app/matches";
 
 function* getMatches() {
   try {
+    const week = yield select(weekmatchesSelector);
+    const league = yield select(leagueMatchesSelector);
+
     const response = yield call(fetchApi, {
-      url: urlLocal
+      url: `${urlLocal}?league=${league}&week=${week}`
     });
 
     yield put(getMatchesSuccess(response));
@@ -18,5 +23,5 @@ function* getMatches() {
 }
 
 export default function* pokemonSaga() {
-  yield takeLatest([GET_MATCHES, SET_WEEK], getMatches);
+  yield takeLatest([GET_MATCHES], getMatches);
 }

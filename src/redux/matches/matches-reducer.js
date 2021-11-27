@@ -8,9 +8,9 @@ import {
 
 const initialState = {
   data: [],
-  week: 0,
-  league: "low",
-  isLoading: false
+  week: 1,
+  league: "Nivel Bajo",
+  isLoading: false,
 };
 
 const getMatchesHandler = (state) => ({
@@ -32,13 +32,12 @@ const getMatchesSuccessHandler = (
 const setLeagueHandler = (state, action) => ({
   ...state,
   league: action.payload,
-  week: 0,
+  week: 1,
 });
 
 const setWeekHandler = (state, action) => ({
   ...state,
   week: action.payload,
-  isLoading: true,
 });
 
 const handlers = {
