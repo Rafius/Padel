@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const EventMain = styled.div`
+export const MatchMain = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +24,6 @@ export const TeamNames = styled.div`
 `;
 
 export const HomeTeam = styled.div`
-  font-weight: ${({ won }) => won && 600};
   margin-bottom: 10px;
 `;
 

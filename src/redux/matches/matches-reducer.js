@@ -21,11 +21,13 @@ const getMatchesHandler = (state) => ({
 const getMatchesSuccessHandler = (
   state,
   action
-) => ({
-  ...state,
-  data: action.payload.matches,
-  isLoading: false,
-});
+) => {
+  return ({
+    ...state,
+    ...action.payload.matches,
+    isLoading: false,
+  });
+};
 
 const setLeagueHandler = (state, action) => ({
   ...state,

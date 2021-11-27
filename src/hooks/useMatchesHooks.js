@@ -1,16 +1,16 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-    leagueMatchesSelector, weekmatchesSelector, setLeague, currentTitleSelector, setWeek, currentMatchesPerWeekSelector,
-    matchesLengthPerLeagueSelector, getMatches, isLoadingSelector
+    leagueMatchesSelector, weekmatchesSelector, setLeague, setWeek, isLoadingSelector, matchesTitleSelector,
+    matchesDataSelector,
+    getMatches
 } from "@/redux/matches";
 import { useEffect } from "react";
 
 const useMatchesHooks = () => {
-    const matchesLength = useSelector(matchesLengthPerLeagueSelector);
-    const { events } = useSelector(currentMatchesPerWeekSelector);
+    const matchesData = useSelector(matchesDataSelector);
     const week = useSelector(weekmatchesSelector);
     const league = useSelector(leagueMatchesSelector);
-    const title = useSelector(currentTitleSelector);
+    const title = useSelector(matchesTitleSelector);
     const isLoading = useSelector(isLoadingSelector);
 
     const dispatch = useDispatch();
@@ -19,19 +19,18 @@ const useMatchesHooks = () => {
     const handleSetLeague = (league) => dispatch(setLeague(league));
 
     useEffect(() => {
-        if (events.length) return;
+        if (matchesData.length) return;
         dispatch(getMatches());
-    }, []);
+    }, [matchesData, dispatch, getMatches]);
 
     return {
         week,
         title,
-        events,
         league,
         isLoading,
+        matchesData,
         decreaseWeek,
         increaseWeek,
-        matchesLength,
         handleSetLeague,
     };
 };

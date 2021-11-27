@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  EventMain,
+  MatchMain,
   Status,
   HomeTeam,
   AwayTeam,
@@ -9,20 +9,20 @@ import {
   Result,
   HomeResult,
   AwayResult,
-} from "./EventStyled";
+} from "./MatchStyled";
 
-const Event = ({ home, away, homeResult, awayResult, isSecondary, index }) => (
-  <EventMain index={index} isSecondary={isSecondary}>
+const Match = ({ home, away, homeResult, awayResult, isSecondary, index }) => (
+  <MatchMain index={index} isSecondary={isSecondary}>
     <Status result={homeResult}>{homeResult ? "Jugado" : "Pendiente"}</Status>
     <TeamNames>
-      <HomeTeam won={homeResult > awayResult}>{home}</HomeTeam>
-      <AwayTeam won={awayResult > homeResult}>{away}</AwayTeam>
+      <HomeTeam>{home}</HomeTeam>
+      <AwayTeam>{away}</AwayTeam>
     </TeamNames>
     <Result>
       <HomeResult>{homeResult}</HomeResult>
       <AwayResult>{awayResult}</AwayResult>
     </Result>
-  </EventMain>
+  </MatchMain>
 );
 
-export default Event;
+export default Match;
