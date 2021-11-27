@@ -11,7 +11,7 @@ function* getMatches() {
     const league = yield select(matchesLeagueSelector);
 
     const response = yield call(fetchApi, {
-      url: `${urlLocal}?league=${league}`
+      url: `${urlProd}?league=${league}`
     });
 
     yield put(getMatchesSuccess(response));
