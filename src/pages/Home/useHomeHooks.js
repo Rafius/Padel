@@ -1,14 +1,12 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-    leagueMatchesSelector, weekmatchesSelector, setLeague, setWeek, isLoadingSelector, matchesTitleSelector,
-    matchesDataSelector,
-    getMatches
+    matchesIsLoadingSelector, matchesDataSelector, getMatches
 } from "@/redux/matches";
 import { useEffect } from "react";
 
 const useMatchesHooks = () => {
     const matchesData = useSelector(matchesDataSelector);
-    const isLoading = useSelector(isLoadingSelector);
+    const isLoading = useSelector(matchesIsLoadingSelector);
 
     const dispatch = useDispatch();
 

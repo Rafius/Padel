@@ -7,9 +7,9 @@ import {
 } from "./matches-actions";
 
 const initialState = {
-  data: [],
+  weeks: [],
   week: 1,
-  league: "Nivel Bajo",
+  league: "low",
   isLoading: false,
 };
 

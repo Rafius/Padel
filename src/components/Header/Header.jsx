@@ -7,9 +7,15 @@ import { HeaderContainer, Title, Info } from "./HeaderStyled";
 import useHeaderHooks from "./useHeaderHooks";
 
 const Header = () => {
-  const { week, title, league, matchesLength, handleSetWeek, handleSetLeague } =
-    useHeaderHooks();
-
+  const {
+    week,
+    title,
+    league,
+    handleSetWeek,
+    handleSetLeague,
+    matchesWeeksLength,
+  } = useHeaderHooks();
+  console.log(matchesWeeksLength, week);
   return (
     <HeaderContainer>
       <Leagues handleSetLeague={handleSetLeague} league={league} />
@@ -20,7 +26,7 @@ const Header = () => {
         <Title>{title}</Title>
         <Button
           onClick={() => handleSetWeek(+1)}
-          disabled={matchesLength - 1 === week}
+          disabled={matchesWeeksLength === week}
         >
           Siguiente
         </Button>

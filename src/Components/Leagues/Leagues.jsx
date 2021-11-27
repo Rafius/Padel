@@ -3,8 +3,8 @@ import React from "react";
 import Button from "@/components/Button";
 import { LeaguesContainer } from "./LeaguesStyled";
 
-const LOW = "Nivel Bajo";
-const MID = "Nivel Medio";
+const LOW = "low";
+const MID = "mid";
 
 const Leagues = ({ handleSetLeague, league }) => {
   return (

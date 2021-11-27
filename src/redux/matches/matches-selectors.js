@@ -3,27 +3,37 @@ import { createSelector } from "reselect";
 export const matchesSelector = (state) =>
   state && state.matches;
 
-export const weekmatchesSelector = createSelector(
+export const matchesWeekSelector = createSelector(
   [matchesSelector],
   (matches) => matches.week
 );
 
-export const leagueMatchesSelector = createSelector(
+export const matchesLeagueSelector = createSelector(
   [matchesSelector],
   (matches) => matches.league
 );
 
-export const isLoadingSelector = createSelector(
+export const matchesIsLoadingSelector = createSelector(
   [matchesSelector],
   (matches) => matches.isLoading
 );
 
-export const matchesDataSelector = createSelector(
+export const matchesWeeksSelector = createSelector(
   [matchesSelector],
-  (matches) => matches.data || []
+  (matches) => matches.weeks || []
+);
+
+export const matchesDataSelector = createSelector(
+  [matchesWeeksSelector, matchesWeekSelector],
+  (matchesWeeks, week) => matchesWeeks[week - 1]?.data || []
 );
 
 export const matchesTitleSelector = createSelector(
-  [matchesSelector],
-  (matches) => matches.title
+  [matchesWeeksSelector, matchesWeekSelector],
+  (matchesWeeks, week) => matchesWeeks[week - 1]?.title
+);
+
+export const matchesWeeksLengthSelector = createSelector(
+  [matchesWeeksSelector],
+  (matchesWeeks) => matchesWeeks.length
 );
