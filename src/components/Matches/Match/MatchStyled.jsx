@@ -9,7 +9,9 @@ export const MatchMain = styled.div`
   border-bottom: 1px solid white;
   border-radius: 4px;
   margin-bottom: 10px;
-  background-color: ${({ index }) => index % 2 === 0 && "rgb(225, 225, 225)"};
+  background-color: white;
+  box-shadow: 0 1px 5px black;
+  border: 1px black;
 `;
 
 export const Status = styled.div`
