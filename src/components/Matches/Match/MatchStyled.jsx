@@ -20,11 +20,11 @@ export const Status = styled.div`
   font-weight: 600;
 `;
 
-export const TeamNames = styled.div`
+export const TeamNames = styled.a`
   min-width: 200px;
 `;
 
-export const HomeTeam = styled.div`
+export const HomeTeam = styled.a`
   margin-bottom: 10px;
 `;
 
