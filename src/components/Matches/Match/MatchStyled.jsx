@@ -20,7 +20,7 @@ export const Status = styled.div`
   font-weight: 600;
 `;
 
-export const TeamNames = styled.a`
+export const TeamNames = styled.div`
   min-width: 200px;
 `;
 
@@ -28,7 +28,7 @@ export const HomeTeam = styled.a`
   margin-bottom: 10px;
 `;
 
-export const AwayTeam = styled.div``;
+export const AwayTeam = styled.a``;
 
 export const Result = styled.div`
   font-weight: 600;
