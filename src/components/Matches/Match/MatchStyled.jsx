@@ -21,6 +21,8 @@ export const Status = styled.div`
 `;
 
 export const TeamNames = styled.div`
+  display: flex;
+  flex-direction: column;
   min-width: 200px;
 `;
 
