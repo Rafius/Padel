@@ -10,8 +10,7 @@ export const MatchMain = styled.div`
   border-radius: 4px;
   margin-bottom: 10px;
   background-color: white;
-  box-shadow: 0 1px 5px black;
-  border: 1px black;
+  border: 1px solid rgba(5, 6, 15, 0.2);
 `;
 
 export const Status = styled.div`
