@@ -1,8 +1,5 @@
 import { reducerFactory } from "../reducer-factory";
 import {
-  GET_PHONE_NUMBERS,
-  GET_PHONE_NUMBERS_FAIL,
-  GET_PHONE_NUMBERS_SUCCESS,
   SET_WEEK,
   GET_MATCHES,
   GET_MATCHES_FAIL,
@@ -33,22 +30,6 @@ const getMatchesFailHandler = (state) => ({
   isLoading: false,
 });
 
-const getPhoneNumbersHandler = (state) => ({
-  ...state,
-  isLoading: true,
-});
-
-const getPhoneNumbersSuccessHandler = (state, action) => ({
-  ...state,
-  ...action.payload.numbers,
-  isLoading: false,
-});
-
-const getPhoneNumbersFailHandler = (state, action) => ({
-  ...state,
-  isLoading: false,
-});
-
 const setLeagueHandler = (state, action) => ({
   ...state,
   league: action.payload,
@@ -64,10 +45,7 @@ const handlers = {
   [GET_MATCHES]: getMatchesHandler,
   [GET_MATCHES_SUCCESS]: getMatchesSuccessHandler,
   [GET_MATCHES_FAIL]: getMatchesFailHandler,
-  [GET_PHONE_NUMBERS]: getPhoneNumbersHandler,
-  [GET_PHONE_NUMBERS_SUCCESS]: getPhoneNumbersSuccessHandler,
   [SET_LEAGUE]: setLeagueHandler,
-  [GET_PHONE_NUMBERS_FAIL]: getPhoneNumbersFailHandler,
   [SET_WEEK]: setWeekHandler,
 };
 

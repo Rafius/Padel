@@ -26,11 +26,16 @@ export const TeamNames = styled.div`
   min-width: 200px;
 `;
 
-export const HomeTeam = styled.a`
+export const HomeTeam = styled.div`
   margin-bottom: 10px;
 `;
 
-export const AwayTeam = styled.a``;
+export const AwayTeam = styled.div``;
+
+export const PersonStyled = styled.a`
+  margin-right: 10px;
+  color: inherit;
+`;
 
 export const Result = styled.div`
   font-weight: 600;
