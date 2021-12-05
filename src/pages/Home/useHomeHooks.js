@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
-    matchesIsLoadingSelector, matchesDataSelector, getMatches
+    matchesIsLoadingSelector, matchesDataSelector, getMatches, getPhoneNumbers
 } from "@/redux/matches";
 import { useEffect } from "react";
 
@@ -13,7 +13,9 @@ const useMatchesHooks = () => {
     useEffect(() => {
         if (matchesData.length || isLoading) return;
         dispatch(getMatches());
-    }, [matchesData, dispatch, getMatches]);
+        dispatch(getPhoneNumbers());
+    }, []);
+    // }, [matchesData, dispatch, getMatches, getPhoneNumbers, isLoading]);
 
     return {
         isLoading,
