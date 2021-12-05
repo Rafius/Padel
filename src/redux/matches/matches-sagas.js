@@ -4,7 +4,7 @@ import { GET_MATCHES, getMatchesSuccess, GET_PHONE_NUMBERS, getPhoneNumbersSucce
 import { matchesLeagueSelector } from "./matches-selectors";
 import { getMatchesFail, getPhoneNumbersFail } from ".";
 
-const urlLocal = "http://localhost:3001/matches";
+const urlLocal = "http://localhost:3001/";
 const urlProd = "https://padel-api.vercel.app/";
 
 function* getMatches() {
@@ -27,7 +27,7 @@ function* getPhoneNumbers() {
     const league = yield select(matchesLeagueSelector);
 
     const response = yield call(fetchApi, {
-      url: `${urlProd}phones?league=${league}`
+      url: `${urlProd}phone-numbers?league=${league}`
     });
 
     yield put(getPhoneNumbersSuccess(response));
