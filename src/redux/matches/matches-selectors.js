@@ -28,9 +28,9 @@ export const matchesDataSelector = createSelector(
   (matchesWeeks, week) => matchesWeeks[week - 1]?.data || []
 );
 
-export const matchesTitleSelector = createSelector(
-  [matchesWeeksSelector, matchesWeekSelector],
-  (matchesWeeks, week) => matchesWeeks[week - 1]?.title
+export const matchesTitlesSelector = createSelector(
+  [matchesWeeksSelector],
+  (matchesWeeks) => matchesWeeks.map((week) => week.title) || []
 );
 
 export const matchesWeeksLengthSelector = createSelector(

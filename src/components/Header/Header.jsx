@@ -2,34 +2,20 @@ import React from "react";
 
 import Button from "@/components/Button";
 import Leagues from "@/components/Leagues";
+import Select from "@/components/Select";
 
-import { HeaderContainer, Title, Info } from "./HeaderStyled";
+import { HeaderContainer, Info } from "./HeaderStyled";
 import useHeaderHooks from "./useHeaderHooks";
 
 const Header = () => {
-  const {
-    week,
-    title,
-    league,
-    handleSetWeek,
-    handleSetLeague,
-    matchesWeeksLength,
-  } = useHeaderHooks();
-  console.log(matchesWeeksLength, week);
+  const { week, league, titles, handleSelect, handleSetLeague } =
+    useHeaderHooks();
+
   return (
     <HeaderContainer>
       <Leagues handleSetLeague={handleSetLeague} league={league} />
       <Info>
-        <Button onClick={() => handleSetWeek(-1)} disabled={week === 1}>
-          Anterior
-        </Button>
-        <Title>{title}</Title>
-        <Button
-          onClick={() => handleSetWeek(+1)}
-          disabled={matchesWeeksLength === week}
-        >
-          Siguiente
-        </Button>
+        <Select options={titles} handleSelect={handleSelect} week={week} />
       </Info>
     </HeaderContainer>
   );
