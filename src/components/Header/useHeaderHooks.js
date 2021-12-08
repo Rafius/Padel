@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
     matchesLeagueSelector, matchesWeekSelector, setLeague, setWeek, matchesTitlesSelector, getMatches
 } from "@/redux/matches";
+import { getRanking } from "@/redux/ranking";
 
 const useMatchesHooks = () => {
     const week = useSelector(matchesWeekSelector);
@@ -13,6 +14,7 @@ const useMatchesHooks = () => {
     const handleSetLeague = (league) => {
         dispatch(setLeague(league));
         dispatch(getMatches());
+        dispatch(getRanking());
     };
 
     const handleSelect = (e) => {
