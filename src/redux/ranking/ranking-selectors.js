@@ -1,9 +1,9 @@
 import { createSelector } from "reselect";
 
 export const rankingSelector = (state) =>
-    state && state.rankingSelector;
+    state && state.ranking;
 
-// export const rankingSelectorSelector = createSelector(
-//     [rankingSelector],
-//     (ranking) => ranking.ranking
-// );
+export const rankingDataSelector = createSelector(
+    [rankingSelector],
+    (ranking) => ranking.data
+);

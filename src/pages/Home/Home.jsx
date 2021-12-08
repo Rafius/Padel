@@ -16,8 +16,8 @@ const Home = () => {
   return (
     <Main>
       <Header />
-      <Ranking />
       <Matches />
+      <Ranking />
     </Main>
   );
 };
