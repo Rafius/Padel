@@ -9,7 +9,3 @@ export const Main = styled.div`
   padding: 10px;
   margin: auto;
 `;
-
-export const SpinnerContainer = styled.div`
-  margin: auto 0;
-`;
