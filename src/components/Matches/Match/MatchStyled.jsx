@@ -34,7 +34,7 @@ export const AwayTeam = styled.div``;
 
 export const PersonStyled = styled.a`
   margin-right: 10px;
-  color: inherit;
+  color: #007185;
 `;
 
 export const Result = styled.div`
