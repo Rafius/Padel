@@ -27,12 +27,12 @@ const Match = ({ home, away, homeResult, awayResult, isSecondary, index }) => {
       <TeamNames>
         <HomeTeam>
           {home.person.map(({ name, phone }) => (
-            <Person name={name} phone={phone} />
+            <Person key={name} name={name} phone={phone} />
           ))}
         </HomeTeam>
         <AwayTeam>
           {away.person.map(({ name, phone }) => (
-            <Person name={name} phone={phone} />
+            <Person key={name} name={name} phone={phone} />
           ))}
         </AwayTeam>
       </TeamNames>

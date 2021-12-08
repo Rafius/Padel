@@ -1,8 +1,10 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
 import {
     matchesIsLoadingSelector, matchesDataSelector, getMatches,
 } from "@/redux/matches";
-import { useEffect } from "react";
+import { getRanking } from "@/redux/ranking";
 
 const useMatchesHooks = () => {
     const matchesData = useSelector(matchesDataSelector);
@@ -13,7 +15,8 @@ const useMatchesHooks = () => {
     useEffect(() => {
         if (matchesData.length || isLoading) return;
         dispatch(getMatches());
-    }, [matchesData, dispatch, getMatches, isLoading]);
+        dispatch(getRanking());
+    }, [matchesData, isLoading, dispatch, getMatches, getRanking]);
 
     return {
         isLoading,

@@ -23,6 +23,6 @@ function* getMatches() {
 }
 
 
-export default function* pokemonSaga() {
+export default function* matchesSaga() {
   yield takeLatest([GET_MATCHES], getMatches);
 }
