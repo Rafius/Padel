@@ -7,7 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import Paper from "@mui/material/Paper";
 import { rankingDataSelector } from "@/redux/ranking";
-import { TableCell, TableRow } from "@mui/material";
+import { StyledTableRow, StyledTableCell } from "./RankingStyled";
 
 const header = [
   "Clasificacion",
@@ -28,11 +28,11 @@ const Ranking = () => {
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
-          <TableRow>
+          <StyledTableRow>
             {header.map((item) => (
-              <TableCell key={item}>{item}</TableCell>
+              <StyledTableCell key={item}>{item}</StyledTableCell>
             ))}
-          </TableRow>
+          </StyledTableRow>
         </TableHead>
         <TableBody>
           {ranking.map(
@@ -47,17 +47,19 @@ const Ranking = () => {
               gamesDifference,
               ranking,
             }) => (
-              <TableRow key={name}>
-                <TableCell align="center">{ranking}</TableCell>
-                <TableCell align="center">{name}</TableCell>
-                <TableCell align="center">{played}</TableCell>
-                <TableCell align="center">{won}</TableCell>
-                <TableCell align="center">{lose}</TableCell>
-                <TableCell align="center">{points}</TableCell>
-                <TableCell align="center">{gamesFor}</TableCell>
-                <TableCell align="center">{gamesAgainst}</TableCell>
-                <TableCell align="center">{gamesDifference}</TableCell>
-              </TableRow>
+              <StyledTableRow key={name}>
+                <StyledTableCell align="center">{ranking}</StyledTableCell>
+                <StyledTableCell align="center">{name}</StyledTableCell>
+                <StyledTableCell align="center">{played}</StyledTableCell>
+                <StyledTableCell align="center">{won}</StyledTableCell>
+                <StyledTableCell align="center">{lose}</StyledTableCell>
+                <StyledTableCell align="center">{points}</StyledTableCell>
+                <StyledTableCell align="center">{gamesFor}</StyledTableCell>
+                <StyledTableCell align="center">{gamesAgainst}</StyledTableCell>
+                <StyledTableCell align="center">
+                  {gamesDifference}
+                </StyledTableCell>
+              </StyledTableRow>
             )
           )}
         </TableBody>
