@@ -4,7 +4,7 @@ import { Provider } from "react-redux";
 import Home from "@/pages/Home";
 import configureStore from "./redux/store";
 import "typeface-roboto";
-import { GlobalStyle } from "./MainStyles";
+import { GlobalStyle } from "./MainStyled";
 
 const store = configureStore();
 
