@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-  MatchMain,
+  MatchesContainer,
   Status,
   HomeTeam,
   AwayTeam,
@@ -22,7 +22,7 @@ const Person = ({ name, phone }) => (
 
 const Match = ({ home, away, homeResult, awayResult, isSecondary, index }) => {
   return (
-    <MatchMain index={index} isSecondary={isSecondary}>
+    <MatchesContainer index={index} isSecondary={isSecondary}>
       <Status result={homeResult}>{homeResult ? "Jugado" : "Pendiente"}</Status>
       <TeamNames>
         <HomeTeam>
@@ -40,7 +40,7 @@ const Match = ({ home, away, homeResult, awayResult, isSecondary, index }) => {
         <HomeResult>{homeResult}</HomeResult>
         <AwayResult>{awayResult}</AwayResult>
       </Result>
-    </MatchMain>
+    </MatchesContainer>
   );
 };
 

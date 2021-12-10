@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MatchMain = styled.div`
+export const MatchesContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,8 +9,9 @@ export const MatchMain = styled.div`
   border-bottom: 1px solid white;
   border-radius: 4px;
   margin-bottom: 10px;
-  background-color: white;
+  background-color: ${({ index }) => (index % 2 === 0 ? "#f5f5f5" : "#fff")};
   border: 1px solid rgba(5, 6, 15, 0.2);
+  box-shadow: 1px 5px 6px -2px rgba(0, 0, 0, 0.29);
 `;
 
 export const Status = styled.div`

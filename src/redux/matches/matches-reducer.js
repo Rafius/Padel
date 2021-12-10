@@ -9,7 +9,7 @@ import {
 
 const initialState = {
   weeks: [],
-  week: 1,
+  week: 4,
   league: "low",
   isLoading: false,
 };
