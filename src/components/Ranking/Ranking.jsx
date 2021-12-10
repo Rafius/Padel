@@ -37,23 +37,23 @@ const Ranking = () => {
         <TableBody>
           {ranking.map(
             ({
+              ranking,
               name,
+              points,
               played,
               won,
               lose,
-              points,
               gamesFor,
               gamesAgainst,
               gamesDifference,
-              ranking,
             }) => (
               <StyledTableRow key={name}>
                 <StyledTableCell align="center">{ranking}</StyledTableCell>
                 <StyledTableCell align="center">{name}</StyledTableCell>
+                <StyledTableCell align="center">{points}</StyledTableCell>
                 <StyledTableCell align="center">{played}</StyledTableCell>
                 <StyledTableCell align="center">{won}</StyledTableCell>
                 <StyledTableCell align="center">{lose}</StyledTableCell>
-                <StyledTableCell align="center">{points}</StyledTableCell>
                 <StyledTableCell align="center">{gamesFor}</StyledTableCell>
                 <StyledTableCell align="center">{gamesAgainst}</StyledTableCell>
                 <StyledTableCell align="center">
