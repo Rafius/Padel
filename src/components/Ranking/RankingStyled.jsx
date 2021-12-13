@@ -1,6 +1,7 @@
 import { styled } from "@mui/material/styles";
 import TableRow from "@mui/material/TableRow";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import { red } from "@mui/material/colors";
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -8,7 +9,8 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
-    fontSize: 14,
+    fontSize: 16,
+    whiteSpace: "nowrap",
   },
 }));
 
