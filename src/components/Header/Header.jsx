@@ -1,22 +1,42 @@
 import React from "react";
-
-import Button from "@/components/Button";
-import Leagues from "@/components/Leagues";
-import Select from "@/components/Select";
-
-import { HeaderContainer, Info } from "./HeaderStyled";
+import { useLocation } from "react-router";
+import Leagues from "../Leagues/Leagues";
 import useHeaderHooks from "./useHeaderHooks";
 
+import {
+  HeaderContainer,
+  HeaderContainerItem,
+  HeaderItem,
+  HeaderItemName
+} from "./HeaderStyled";
+
+const headerItems = [
+  {
+    name: "Jornadas",
+    path: "/"
+  },
+  {
+    name: "Clasificacion",
+    path: "/ranking"
+  }
+];
+
 const Header = () => {
-  const { week, league, titles, handleSelect, handleSetLeague } =
-    useHeaderHooks();
+  const { league, handleSetLeague } = useHeaderHooks();
+  const { pathname } = useLocation();
+
+  const isActive = (path) => pathname === path;
 
   return (
     <HeaderContainer>
+      <HeaderContainerItem>
+        {headerItems.map(({ name, path }) => (
+          <HeaderItem to={path} key={name}>
+            <HeaderItemName isActive={isActive(path)}>{name}</HeaderItemName>
+          </HeaderItem>
+        ))}
+      </HeaderContainerItem>
       <Leagues handleSetLeague={handleSetLeague} league={league} />
-      <Info>
-        <Select options={titles} handleSelect={handleSelect} week={week} />
-      </Info>
     </HeaderContainer>
   );
 };

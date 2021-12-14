@@ -1,10 +1,10 @@
 import React from "react";
-import { ButtonStyle } from "./ButtonStyled";
+import { ButtonStyled } from "./ButtonStyled";
 
 const Button = ({ onClick, disabled, children }) => (
-  <ButtonStyle onClick={onClick} disabled={disabled}>
+  <ButtonStyled onClick={onClick} disabled={disabled}>
     {children}
-  </ButtonStyle>
+  </ButtonStyled>
 );
 
 export default Button;
