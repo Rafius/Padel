@@ -22,8 +22,8 @@ export const HeaderItem = styled(Link)`
   color: inherit;
 `;
 
-export const HeaderItemName = styled.span`
-  ${({ isActive }) => isActive && "font-size: 22px"}
+export const HeaderItemName = styled.h1`
+  ${({ isActive }) => !isActive && "font-weight: normal"}
 `;
 
 export const Title = styled.h4`

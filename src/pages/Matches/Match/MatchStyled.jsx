@@ -17,7 +17,7 @@ export const MatchesContainer = styled.div`
 export const Status = styled.div`
   margin-right: 10px;
   color: ${({ result }) => (result ? "green" : "red")};
-  min-width: 100px;
+  min-width: 80px;
   font-weight: 600;
 `;
 

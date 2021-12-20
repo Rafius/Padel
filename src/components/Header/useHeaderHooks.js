@@ -7,8 +7,8 @@ const useMatchesHooks = () => {
   const dispatch = useDispatch();
   const league = useSelector(matchesLeagueSelector);
 
-  const handleSetLeague = (league) => {
-    dispatch(setLeague(league));
+  const handleSetLeague = (e) => {
+    dispatch(setLeague(e.target.value));
     dispatch(getMatches());
     dispatch(getRanking());
   };
