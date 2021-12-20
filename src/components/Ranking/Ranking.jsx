@@ -18,7 +18,7 @@ const header = [
   "Derrotas",
   "Juegos a Favor",
   "Juegos en Contra",
-  "Diferencia de juegos",
+  "Diferencia de juegos"
 ];
 
 const Ranking = () => {
@@ -45,11 +45,11 @@ const Ranking = () => {
               lose,
               gamesFor,
               gamesAgainst,
-              gamesDifference,
+              gamesDifference
             }) => (
               <StyledTableRow key={name}>
                 <StyledTableCell align="center">{ranking}</StyledTableCell>
-                <StyledTableCell align="left">{name}</StyledTableCell>
+                <StyledTableCell align="center">{name}</StyledTableCell>
                 <StyledTableCell align="center">{points}</StyledTableCell>
                 <StyledTableCell align="center">{played}</StyledTableCell>
                 <StyledTableCell align="center">{won}</StyledTableCell>

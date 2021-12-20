@@ -2,6 +2,9 @@ import React from "react";
 import { useLocation } from "react-router";
 import Leagues from "../Leagues/Leagues";
 import useHeaderHooks from "./useHeaderHooks";
+import { MdOutlineSportsTennis } from "react-icons/md";
+
+import { BiTable } from "react-icons/bi";
 
 import {
   HeaderContainer,
@@ -13,11 +16,13 @@ import {
 const headerItems = [
   {
     name: "Jornadas",
-    path: "/"
+    path: "/",
+    icon: <MdOutlineSportsTennis size={"1.5em"} />
   },
   {
     name: "Clasificacion",
-    path: "/ranking"
+    path: "/ranking",
+    icon: <BiTable size={"1.5em"} />
   }
 ];
 
@@ -30,8 +35,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderContainerItem>
-        {headerItems.map(({ name, path }) => (
+        {headerItems.map(({ name, path, icon }) => (
           <HeaderItem to={path} key={name}>
+            {icon}
             <HeaderItemName isActive={isActive(path)}>{name}</HeaderItemName>
           </HeaderItem>
         ))}

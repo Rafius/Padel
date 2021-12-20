@@ -4,41 +4,40 @@ import {
   GET_MATCHES,
   GET_MATCHES_FAIL,
   GET_MATCHES_SUCCESS,
-  SET_LEAGUE,
+  SET_LEAGUE
 } from "./matches-actions";
 
 const initialState = {
   weeks: [],
-  week: 4,
+  week: 5,
   league: "low",
-  isLoading: false,
+  isLoading: false
 };
 
 const getMatchesHandler = (state) => ({
   ...state,
-  isLoading: true,
+  isLoading: true
 });
 
 const getMatchesSuccessHandler = (state, action) => ({
   ...state,
   ...action.payload.matches,
-  isLoading: false,
+  isLoading: false
 });
 
 const getMatchesFailHandler = (state) => ({
   ...state,
-  isLoading: false,
+  isLoading: false
 });
 
 const setLeagueHandler = (state, action) => ({
   ...state,
-  league: action.payload,
-  week: 1,
+  league: action.payload
 });
 
 const setWeekHandler = (state, action) => ({
   ...state,
-  week: action.payload,
+  week: action.payload
 });
 
 const handlers = {
@@ -46,7 +45,7 @@ const handlers = {
   [GET_MATCHES_SUCCESS]: getMatchesSuccessHandler,
   [GET_MATCHES_FAIL]: getMatchesFailHandler,
   [SET_LEAGUE]: setLeagueHandler,
-  [SET_WEEK]: setWeekHandler,
+  [SET_WEEK]: setWeekHandler
 };
 
 export default reducerFactory(initialState, handlers);

@@ -14,16 +14,27 @@ export const HeaderContainerItem = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(243 244 246);
+  }
 `;
 
 export const HeaderItem = styled(Link)`
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   text-decoration: none;
   color: inherit;
 `;
 
-export const HeaderItemName = styled.h1`
-  ${({ isActive }) => !isActive && "font-weight: normal"}
+export const HeaderItemName = styled.span`
+  ${({ isActive }) => isActive && "font-weight: bold"}
 `;
 
 export const Title = styled.h4`
