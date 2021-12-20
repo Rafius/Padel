@@ -10,6 +10,7 @@ import {
   StyledTableContainer,
   StyledTableRow,
   StyledTableCell,
+  StyledTableHead
 } from "./RankingStyled";
 import useRankingHooks from "./useRankingHooks";
 
@@ -22,7 +23,7 @@ const header = [
   "Derrotas",
   "Juegos a Favor",
   "Juegos en Contra",
-  "Diferencia de juegos",
+  "Diferencia de juegos"
 ];
 
 const Ranking = () => {
@@ -32,13 +33,13 @@ const Ranking = () => {
   return (
     <StyledTableContainer component={Paper}>
       <Table aria-label="customized table">
-        <TableHead>
+        <StyledTableHead>
           <StyledTableRow>
             {header.map((item) => (
               <StyledTableCell key={item}>{item}</StyledTableCell>
             ))}
           </StyledTableRow>
-        </TableHead>
+        </StyledTableHead>
         <TableBody>
           {ranking.map(
             ({
@@ -50,7 +51,7 @@ const Ranking = () => {
               lose,
               gamesFor,
               gamesAgainst,
-              gamesDifference,
+              gamesDifference
             }) => (
               <StyledTableRow key={name}>
                 <StyledTableCell align="center">{ranking}</StyledTableCell>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MatchesContainer = styled.div`
+export const MatchesContainer = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
