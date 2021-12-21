@@ -8,19 +8,19 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 20px;
   background-color: rgb(243 244 246);
+
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(243 244 246);
+    width: 100%;
+  }
 `;
 
 export const HeaderContainerItem = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    position: fixed;
-    bottom: 0;
-    background-color: rgb(243 244 246);
-  }
 `;
 
 export const HeaderItem = styled(Link)`
