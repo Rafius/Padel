@@ -4,7 +4,7 @@ import { TableHead, TableContainer, TableRow } from "@mui/material";
 
 export const StyledTableContainer = styled(TableContainer)`
   margin: 5px;
-  height: calc(100vh - 150px);
+  height: calc(100vh - 120px);
   overflow: auto;
 `;
 
@@ -28,6 +28,4 @@ export const StyledTableRow = styled(TableRow)(({ theme }) => ({
   }
 }));
 
-export const StyledTableHead = styled(TableHead)`
-  position: fixed;
-`;
+export const StyledTableHead = styled(TableHead)``;
