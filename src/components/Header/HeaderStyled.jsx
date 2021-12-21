@@ -8,12 +8,14 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 20px;
   background-color: rgb(243 244 246);
+  height: 100px;
 
   @media (max-width: 768px) {
     position: fixed;
     bottom: 0;
     background-color: rgb(243 244 246);
     width: 100%;
+    padding: 10px 0 20px;
   }
 `;
 
